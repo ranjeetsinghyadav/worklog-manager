@@ -13,6 +13,16 @@ hibernate {
     singleSession = true // configure OSIV singleSession mode
 }
 
+grails {
+    mongo {
+        host = "localhost"
+        port = 27017
+        username = ""
+        password = ""
+        databaseName = "worklog-manager"
+    }
+}
+
 // environment specific settings
 environments {
     development {
