@@ -125,3 +125,10 @@
 </div>
 </body>
 </html>
+
+<g:javascript>
+    jQuery(document).ready(function () {
+        log("Grails landing page");
+    });
+
+</g:javascript>

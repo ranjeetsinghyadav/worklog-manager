@@ -116,12 +116,18 @@ log4j.main = {
             'net.sf.ehcache.hibernate'
 }
 
+grails.views.javascript.library = "jquery"
+
 // Added by the Spring Security Core plugin:
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'org.security.SecUser'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'org.security.SecUserSecRole'
 grails.plugin.springsecurity.authority.className = 'org.security.SecRole'
+
+grails.plugin.springsecurity.logout.postOnly = false
+grails.plugin.springsecurity.logout.filterProcessesUrl = '/worklog-manager'
+
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
-        '/'              : ['permitAll'],
+        '/**': ['permitAll'],
         '/index'         : ['permitAll'],
         '/index.gsp'     : ['permitAll'],
         '/assets/**'     : ['permitAll'],
@@ -130,4 +136,30 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         '/**/images/**'  : ['permitAll'],
         '/**/favicon.ico': ['permitAll']
 ]
+//grails.plugin.springsecurity.securityConfigType = "InterceptUrlMap"
+//grails.plugin.springsecurity.interceptUrlMap = [
+//        '/':                  ['permitAll'],
+//        '/index':             ['permitAll'],
+//        '/index.gsp':         ['permitAll'],
+//        '/assets/**':         ['permitAll'],
+//        '/**/js/**':          ['permitAll'],
+//        '/**/css/**':         ['permitAll'],
+//        '/**/images/**':      ['permitAll'],
+//        '/**/favicon.ico':    ['permitAll'],
+//        '/login/**':          ['permitAll'],
+//        '/logout/**':         ['permitAll'],
+//        '/secure/**':         ['ROLE_ADMIN'],
+//        '/finance/**':        ['ROLE_FINANCE', 'isFullyAuthenticated()'],
+//]
+
+//grails.plugin.springsecurity.failureHandler.exceptionMappings = [
+//        'org.springframework.security.authentication.LockedException':             '/user/accountLocked',
+//        'org.springframework.security.authentication.DisabledException':           '/user/accountDisabled',
+//        'org.springframework.security.authentication.AccountExpiredException':     '/user/accountExpired',
+//        'org.springframework.security.authentication.CredentialsExpiredException': '/user/passwordExpired'
+//]
+
+//grails.plugin.springsecurity.errors.login.locked = "None shall pass."
+
+
 

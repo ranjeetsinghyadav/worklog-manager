@@ -8,8 +8,10 @@
 //= require jquery
 //= require_tree .
 //= require_self
+//= require bootstrap
 
 if (typeof jQuery !== 'undefined') {
+    console.log("Loading application.js, jQuery is defined");
     (function ($) {
         $('#spinner').ajaxStart(function () {
             $(this).fadeIn();
@@ -17,4 +19,6 @@ if (typeof jQuery !== 'undefined') {
             $(this).fadeOut();
         });
     })(jQuery);
+} else {
+    console.log("In application.js, jQuery is not defined");
 }
